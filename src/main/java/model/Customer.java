@@ -8,8 +8,7 @@ package model;
  *
  * @author admin
  */
-public class Customer {
-    private String cusID;
+public class Customer extends Account {
     private String cusName;
     private String gender;
     private String phone;
@@ -21,8 +20,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String cusID, String cusName, String gender, String phone, String email, String address, String nation, String cccd) {
-        this.cusID = cusID;
+    public Customer(String cusName, String gender, String phone, String email, String address, String nation, String cccd) {
         this.cusName = cusName;
         this.gender = gender;
         this.phone = phone;
@@ -32,20 +30,11 @@ public class Customer {
         this.cccd = cccd;
     }
 
-    public Customer(String cusID, String cusName, String phone, String email, String cccd) {
-        this.cusID = cusID;
+    public Customer( String cusName, String phone, String email, String cccd) {
         this.cusName = cusName;
         this.phone = phone;
         this.email = email;
         this.cccd = cccd;
-    }
-
-    public String getCusID() {
-        return cusID;
-    }
-
-    public void setCusID(String cusID) {
-        this.cusID = cusID;
     }
 
     public String getCusName() {
@@ -106,6 +95,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" + "cusID=" + cusID + ", cusName=" + cusName + ", gender=" + gender + ", phone=" + phone + ", email=" + email + ", address=" + address + ", nation=" + nation + ", cccd=" + cccd + '}';
+        return "Customer{" + ", cusName=" + cusName + ", gender=" + gender + ", phone=" + phone + ", email=" + email + ", address=" + address + ", nation=" + nation + ", cccd=" + cccd + '}';
     }
 }

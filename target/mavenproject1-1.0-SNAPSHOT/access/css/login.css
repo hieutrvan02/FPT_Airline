@@ -5,7 +5,9 @@
 }
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    background: #ededed;
+    background-image: url('https://www.vietjetair.com/static/media/bay_vao_tuong_lai_bg_mb.e310d427.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 input, button {
     border: none;
@@ -13,17 +15,19 @@ input, button {
     background: none;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
+
 .tip {
     font-size: 20px;
     margin: 40px auto 50px;
     text-align: center;
 }
 .cont {
+    margin-top: 50px;
     overflow: hidden;
     position: relative;
     width: 900px;
     height: 550px;
-    margin: 0 auto 100px;
+    margin: 120px auto 100px;
     background: #fff;
 }
 .form {
@@ -74,7 +78,7 @@ button {
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url('https://scontent.fhan14-4.fna.fbcdn.net/v/t1.15752-9/346134849_1424744174957135_1908370686345418483_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=AMXfMAP-UsYAX8ZoIij&_nc_ht=scontent.fhan14-4.fna&oh=03_AdS1Za9xjuLBQQ4J0MkrK0S2fXfqJMl9eXYbKbkINPX50w&oe=64925545');
+    background-image: url('https://scontent.fsgn2-8.fna.fbcdn.net/v/t1.15752-9/346134849_1424744174957135_1908370686345418483_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=AMXfMAP-UsYAX-xJQ1x&_nc_ht=scontent.fsgn2-8.fna&oh=03_AdSELfHx31Odu4ozFXqV7b2QGMd6KE3PCUrMwURIbDslvg&oe=64925545');
     background-size: cover;
     transition: transform 1.2s ease-in-out;
 }
@@ -234,4 +238,20 @@ input {
 .icon-link--twitter {
     left: auto;
     right: 5px;
+}
+.group{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+.check{
+    width: min-content;
+    height: 17px;
+    width: 17px;
+    margin-top: 0;
+}
+.remember{
+    margin:  0px 10px;
+    width: auto;
 }

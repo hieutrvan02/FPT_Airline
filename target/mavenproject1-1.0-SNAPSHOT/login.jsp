@@ -17,19 +17,30 @@
     <body>
         <p class="tip">Click on button in image container</p>
         <div class="cont">
-            <div class="form sign-in">
-                <h2>Welcome back,</h2>
-                <label>
-                    <span>Email</span>
-                    <input type="email" />
-                </label>
-                <label>
-                    <span>Password</span>
-                    <input type="password" />
-                </label>
-                <p class="forgot-pass">Quên mật khẩu</p>
-                <button type="button" class="submit">Đăng nhập</button>
-            </div>
+            <form action="login" method="post" id="login-form">
+                <div class="form sign-in">
+                    <h2>Đăng nhập</h2>
+                    <label class="form-group">
+                        <span>Email</span>
+                        <input id="login-email" type="email" name="login-email"/>
+                        <span class="form-message"></span>
+                    </label>
+                    <label class="form-group">
+                        <span>Mật khẩu</span>
+                        <input id="login-pass" type="password" name="login-pass"/>
+                        <span class="form-message"></span>
+                    </label>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check">
+                        <label for="check" class="remember">Keep me Signed in</label>
+                    </div>
+                    <label>
+                        <a class="forgot-pass" href="forgot.jsp">Quên mật khẩu?</a>
+                        <p class="text-danger">${mess}</p>
+                    </label>
+                    <button type="submit" class="submit">Đăng nhập</button>
+                </div>
+            </form>   
             <div class="sub-cont">
                 <div class="img">
                     <div class="img__text m--up">
@@ -73,7 +84,7 @@
                 </form>
             </div>
         </div>
-        <script src="./access/js/SigUp.js"></script>
+        <script src="./access/js/login.js"></script>
         <script src="./access/js/validator.js"></script>
         <script>
             // Mong muốn của chúng ta
@@ -90,6 +101,16 @@
                     Validator.isConfirmed('#password_confirmation', function () {
                         return document.querySelector('#register-form #password').value;
                     }, 'Mật khẩu nhập lại không chính xác')
+                ]
+            })
+            Validator({
+                form: '#login-form',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-message',
+                rules: [
+                    Validator.isRequired('#login-email'),
+                    Validator.isEmail('#login-email'),
+                    Validator.isRequired('#login-pass')
                 ]
             })
         </script>

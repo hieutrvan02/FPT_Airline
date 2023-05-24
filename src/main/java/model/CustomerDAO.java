@@ -15,7 +15,6 @@ import java.util.ArrayList;
  */
 public class CustomerDAO extends AccountDAO{
     private ArrayList<Customer> customers = new ArrayList<Customer>();
-    Connection connection;
 
     public CustomerDAO() {
         try {
@@ -38,4 +37,6 @@ public class CustomerDAO extends AccountDAO{
         ps.setString(6, role);
         ps.executeUpdate();
     }
+    
+    
 }

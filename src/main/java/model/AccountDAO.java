@@ -18,6 +18,9 @@ import java.util.Random;
 public class AccountDAO {
 
     Connection connection;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    private ArrayList<Account> result = new ArrayList<>();
 
     public AccountDAO() {
         try {
@@ -25,6 +28,23 @@ public class AccountDAO {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+    
+    public ArrayList<Account> getAccount(String email, String pass) {
+        String query = "select UserID, Email, PassWord , Role\n" 
+                        +"from Users\n" 
+                        +"where Email = ? and PassWord = ?";
+        try {
+            ps = connection.prepareStatement(query);
+            ps.setString(1, email);
+            ps.setString(2, pass);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                result.add(new Account(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)));
+            }
+        } catch (Exception e) {
+        }
+        return result;
     }
 
     public String randomString() {

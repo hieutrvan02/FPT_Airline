@@ -1,9 +1,7 @@
 control\SignUpServlet.class
-model\Constants.class
+control\LoginServlet.class
 model\CustomerDAO.class
 model\AccountDAO.class
 model\DB.class
 model\Account.class
 model\Customer.class
-model\User.class
-control\LoginByGoogle.class
